@@ -734,6 +734,7 @@ Vervolgens is de volgende commando gebruikt: sudo systemctl restart apache2
 Hieronder staat de commando die is gebruikt om een test-page te maken
 echo '<?php phpinfo(); ?>' | sudo tee -a /var/www/html/phpinfo.php > /dev/null
 hieronder zie je de webpagina van PHP
+echo '<?php phpinfo(); ?>' | sudo tee -a /var/www/html/phpinfo.php > /dev/null
 - Het installe 
 
 Je installeert MariaDB met de volgende commando: sudo apt install mariadb-server mariadb-client
