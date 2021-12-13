@@ -768,7 +768,7 @@ Need-to-know tips and support sites for Linux users
 The open source operating system has plenty of available support—you just need to know where to look.
 
 Research provided by TechRepublic Premium
-Now we'll create the Nextcloud database and a database user. Log in to the MySQL console with the command:
+Now we'll create the Nextcloud database and a database user. Log in to the MySQL console with the commaFLWGETnd:
 
 sudo mysql -u root -p
 Create the new database with the command:
@@ -784,7 +784,7 @@ Give the new user the necessary permissions with the command:
 GRANT ALL PRIVILEGES ON nextcloud.* TO 'nextcloud'@'localhost';
 Flush the privileges and exit the console with the commands:
 
-FLUSH PRIVILEGES;
+FLUSH PRIVILEGES;exit
 exit
 How to download and unpack the Nextcloud file
 In order to install Nextcloud, we have to first download the necessary zipped file. To do that, issue the command:
@@ -824,7 +824,7 @@ sudo a2ensite nextcloud
 We'll now enable the necessary Apache modules by issuing the command:
 
 sudo a2enmod rewrite headers env dir mime
-Finally, we'll change the PHP memory limit with the command:
+Finally, we'll change the PHP memory limit with the command:su
 
 sudo sed -i '/^memory_limit =/s/=.*/= 512M/' /etc/php/7.4/apache2/php.ini
 Restart Apache with the command:
