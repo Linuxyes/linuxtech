@@ -179,3 +179,192 @@ Restart Apache with the command:
 sudo systemctl restart apache2
 How to finish the installation
 Your venture into the command line is complete. Now you can open a browser and point it to http://SERVER_IP/nextcloud (where SERVER_IP is the IP address of the hosting server). You'll first be greeted by the web-based installer (Figure A).
+
+
+
+
+
+
+
+
+Ahmed Azouag
+
+Technisch document
+
+De volgende commando’s worden gebruikt bij het testen van de Ubuntu server.
+•	ip address show
+•	lsb_release -d
+•	whoami
+•	date
+•	IP-adres
+hieronder zie je de ip configuratie, geïnstalleerde versie , de gebruiker en de datum van vandaag.
+ 
+
+
+
+
+Hieronder zie je de IP-adres van de Ubuntu server. De IP-adres van de Ubuntu server is 10.0.2.15
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+De volgende commando’s worden gebruikt bij het werkstation.
+•	Ipconfig /all
+•	Whoami
+•	Date
+•	IP-adres
+Hieronder zie je de IP configuraties en het IP-adres.
+ 
+
+
+Hieronder zie je de gebruiker en datum van het werkstation.
+ 
+
+
+Hieronder zie je dat het werkstation aan het pingen is met de Ubuntu server. De verbinding is gelukt en ze kunnen communiceren met elkaar.
+ 
+
+
+Je gaat je Ubuntu server update en upgrade. Hieronder zie je dat gebeuren.
+Update 
+ 
+Upgrade 
+ 
+
+Hieronder zie je dat poorten 22, 80 en 443 open worden gemaakt en dat firewall wordt geactiveerd.
+De volgend commando’s worden gebruikt:
+•	Sudo ufw allow ssh
+•	Sudo ufw allow 80
+•	Sudo ufw allow 443
+•	Sudo ufw enable
+
+ 
+Het configureren van Firewall en SSH.
+
+SSH wordt met de volgende commando’s geïnstalleerd.
+•	Sudo apt-get install ubuntu-desktop
+•	sudo ufw enable
+•	sudo ufw allow 22/tcp
+•	Sudo systemctl status ssh
+
+Hieronder zie je de installatie van desktop.
+ 
+Hieronder zie je dat firewall geactiveerd is en er zijn regels toegevoegd.
+ 
+
+Hieronder zie je dat SSH aan het runnen is in het systeem
+ 
+Het installeren van Apache
+
+Apache wordt met de volgende commando geinstalleerd: sudo apt install apache2
+Hieronder zie je dat Apache aan het installeren is.
+ 
+Hieronder zie je dat Apache2 aan het runnen is in het systeem en actief is.
+ 
+
+Hieronder zie je dat het IP-adres van de Ubuntu server op de webbrowser wordt gebruikt bij de werkstation. Je typt http://10.0.2.15/ en vervolgens verschijnt er een website.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PHP installeren op Ubuntu server
+
+
+
+Hieronder zie je dat het systeem aan het update is
+ 
+
+Hieronder zie je dat PHP aan het installeren is met de volgende commando sudo apt install php libapache2-mod-php
+ss 
+
+Hieronder zie je de versie van PHP
+ 
+Vervolgens is de volgende commando gebruikt: sudo systemctl restart apache2
+Hieronder staat de commando die is gebruikt om een test-page te maken
+echo '<?php phpinfo(); ?>' | sudo tee -a /var/www/html/phpinfo.php > /dev/null
+hieronder zie je de webpagina van PHP
+- 
+
+
+
+
+
+
+
+
+
+
+
+
+Het installe 
+
+Je installeert MariaDB met de volgende commando: sudo apt install mariadb-server mariadb-client
+
+Hieronder zie je dat MariaDB aan het installeren is.
+ 
+
+Met de volgende commando : sudo systemctl status mariadb zie je dat MariaDB actief is in het systeem.
+ 
+
+
+
+
+Hieronder zie je dat er beveiligingsvragen worden gesteld. De commando is hiervoor gebruikt: sudo mysql_secure_installation
+
+ 
+ 
+Het ip-adres van de Ubuntu server wordt in de browser gezet. Je typt http://10.0.2.15/nextcloud en hieronder zie je het resultaat.
+ 
+ 
+De gebruikte username en wachtwoord is ingevuld en hieronder zie je dat ik ben ingelogd als admin user
+ 
+Forward look up zone 
+Zone maak je aan
+Xprotex.com new host genaamd lamp en de ubuntu server 10.0.2.15
+Je gaat naar de file (ubuntu server)
+Cd var/www/html/nextcloud/config
+Cd /var
+Cd www
+Cd html
+Cd nextcloud
+Cd config/
+Sudo nano config.php
+De ip-adres en de naam type
+10.0.2.15 en lamp
+Webbrowser http:/lamp/nextcloud
+Dan zie je nextcloud
+
+
+
