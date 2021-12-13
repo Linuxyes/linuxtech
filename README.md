@@ -857,6 +857,16 @@ De ip-adres en de naam type
 10.0.2.15 en lamp
 Webbrowser http:/lamp/nextcloud
 Dan zie je nextcloud
+<DOCTYPE HTML>
+<html>
+<title></title>
+<head></head>
+<body>
 
+
+</body>
+</html>
+	
+	
 
 
