@@ -886,7 +886,10 @@ Dan zie je nextcloud
 
 </body>
 </html>
-	
+	sudo cp index.html index2.html
+	sudo rm index.html
+	index2.html
+	sudo touch index.html
 	
 
 
