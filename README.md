@@ -353,8 +353,10 @@ Poorten toevoegen aan de firewall
 installatie PHP
 1.	Sudo apt install php libapache2-mod-php (je installeert PHP op de Ubuntu server)
 2.	Php –version (hier zie je de versie van PHP)
-3.	echo '<?php phpinfo(); ?>' | sudo tee -a /var/www/html/phpinfo.php > /dev/null (hier maak je een testpage aan)
-4.	http://IPADDRESS/phpinfo.php (je zet de ip-adres van de Ubuntu server op het werkstation)
+3.	echo '<?php phpinfo(); ?>' | sudo tee -a /var/www/html/phpinfo.php > /dev/null
+4.	echo '<?php phpinfo(); ?>' | sudo tee -a /var/www/html/phpinfo.php > /dev/null (hier maak je een testpage aan)
+5.	
+6.	http://IPADDRESS/phpinfo.php (je zet de ip-adres van de Ubuntu server op het werkstation)
 installatie Mariadb
 1.	Sudo apt install mariadb-server mariadb-client (je installeert PHP op de Ubuntu server)
 2.	Sudo systemctl status mariadb (dit laat zien of Mariadb is geïnstalleerd en aan het runnen is in het systeem of niet)
@@ -841,6 +843,24 @@ Figure
 sudo apt update
 sudo apt upgrade 
 
+commando naar pad voor VirtualHost
+
+cd /var/www/html/
+cd /etc/Apache2/sites-available
+sudo systemctl restart apache2
+sudo nano nextcloud.conf
+<VirtualHost *80>
+ServerName www.nextcloud.Assengraaf.nl
+
+ServerAlias nextcloud.Assengraaf.nl
+
+DocumentRoot /var/www/html/nextcloud
+
+
+
+<virtualHost>
+	
+	echo '<?php phpinfo(); ?>' | sudo tee -a /var/www/html/phpinfo.php > /dev/null
  
 Forward look up zone 
 Zone maak je aan
