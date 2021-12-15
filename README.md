@@ -931,6 +931,107 @@ Alle 3 zijn met elkaar verbonden in het zelfde netwerk.
 Beschrijf hier de conclusie die getrokken kan worden na het uitvoeren van de tests.
 Ik heb Apache, PHP, Mariadb en nextcloud geinstalleerd en getest op de Ubuntu server. Ook heb ik de poorten opengemaakt op de Ubuntu server. Ik heb DNS en DHCP geïnstalleerd en getest op de Microsoft server. Ook heb ik de GPO’s beheert in de tool Group Policy Management. Op het werkstation heb ik alle resultaten laten zien wat je op je Ubuntu server hebt uitgevoerd met de commando’s.
 Uit dit Testplan-Testrapport concludeer ik dat alle functionaliteiten goed zijn geïnstalleerd, getest en is naar behoren werkt
+	
+	
+virtual Host aanmaken
+
+sudo mkdir -p /var/www/example.com/public_html
+sudo mkdir -p /var/www/test.com/public_html
+
+sudo chown -R $USER:$USER /var/www/example.com/public_html
+sudo chown -R $USER:$USER /var/www/test.com/public_html
+
+sudo chmod -R 755 /var/www
+
+nano /var/www/example.com/public_html/index.html
+
+<html>
+  <head>
+    <title>Welcome to Example.com!</title>
+  </head>
+  <body>
+    <h1>Success! The example.com virtual host is working!</h1>
+  </body>
+</html>
+
+cp /var/www/example.com/public_html/index.html /var/www/test.com/public_html/index.html
+
+nano /var/www/test.com/public_html/index.html
+
+<html>
+  <head>
+    <title>Welcome to Test.com!</title>
+  </head>
+  <body> <h1>Success! The test.com virtual host is working!</h1>
+  </body>
+</html>
+
+sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/example.com.conf
+
+sudo nano /etc/apache2/sites-available/example.com.conf
+
+<VirtualHost *:80>
+    ServerAdmin admin@example.com
+    ServerName example.com
+    ServerAlias www.example.com
+    DocumentRoot /var/www/example.com/public_html
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+sudo cp /etc/apache2/sites-available/example.com.conf /etc/apache2/sites-available/test.com.conf
+
+sudo nano /etc/apache2/sites-available/test.com.conf
+
+<VirtualHost *:80>
+    ServerAdmin admin@test.com
+    ServerName test.com
+    ServerAlias www.test.com
+    DocumentRoot /var/www/test.com/public_html
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+sudo a2ensite example.com.conf
+sudo a2ensite test.com.conf
+
+sudo a2dissite 000-default.conf
+
+sudo systemctl restart apache2
+
+sudo nano /etc/hosts
+
+127.0.0.1   localhost
+127.0.1.1   guest-desktop
+your_server_IP example.com
+your_server_IP test.com
+
+
+
+commando naar pad voor VirtualHost
+6.	cd /var/www/html/
+7.	cd /etc/Apache2/sites-available 
+8.	sudo systemctl restart apache2
+9.	sudo nano nextcloud.conf
+10.	<VirtualHost *80>
+ServerName www.nextcloud.Assengraaf.nl
+ServerAlias nextcloud.Assengraaf.nl
+DocumentRoot /var/www/html/nextcloud
+
+<virtualHost>
+
+
+
+
+
+
+
+Test on client
+
+http://example.com
+http://test.com
+
+Behoefte analyse = behoefte van de klant
 
 
 
