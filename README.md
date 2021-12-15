@@ -891,5 +891,46 @@ Dan zie je nextcloud
 	index2.html
 	sudo touch index.html
 	
+	3 Functionaliteit
+1.1.1	Te testen functionaliteit
+Ik ga de functionaliteiten testen van Apache op de Ubuntu server en de werkstation.
+1.1.2	Testscenario
+Het ISO bestand downloaden, virtual Box installeren, in terminal testen. Het werkstation, Ubuntu- en dc01 server worden gebruikt.
+1.1.3	Testinput
+Sudo apt install apache2 (het installeren van Apache)
+Sudo systemctl status apache2 (Hiermee kan je zien of Apache actief is in het systeem)
+http://10.0.2.15 (het IP-adres van de Ubuntu server)
+1.1.4	Verwachte werking/output
+Je hebt Apache geïnstalleerd en is aan het runnen (actief) in het systeem. Je zet de IP-adres van de Ubuntu server op de browser van de werkstation, waardoor de website (Apache) te voorschijn komt.
+1.1.5	Werkelijke werking/output
+Hieronder zie je dat Apache aan het runnen is en actief is in het systeem.
+ 
+Hieronder zie je de website van Apache te voorschijn.
+ 
+1.1.6	Conclusie test
+Uit bovenstaande zie je dan Apache goed is geïnstalleerd en naar behoren werkt.
+
+	
+	2 Testomgeving
+2.1 Overzicht testomgeving
+Beschrijf hier hoe de testomgeving opgebouwd moet worden.
+
+Je hebt 2 servers en 1 werkstation, namelijk:
+•	Ubuntu server
+Hiermee ga ik Apache, PHP, Mariadb en nextcloud installeren en testen op de Ubuntu server. Ook moeten de poorten opengemaakt worden op de Ubuntu server.
+•	Microsoft server
+Hiermee ga ik DNS en DHCP installeren en testen op de Microsoft server. Ook laat je zien dat je GPO’s beheert in de tool Group Policy Management.
+•	Werkstation
+Hiermee laat je alle resultaten zien wat je op je Ubuntu server hebt uitgevoerd met de commando’s.
+Je ziet de resultaten van Apache, PHP, nextcloud, GPO, DNS en DHCP.
+
+Alle 3 zijn met elkaar verbonden in het zelfde netwerk.
+
+	
+	Eindconclusie testen
+Beschrijf hier de conclusie die getrokken kan worden na het uitvoeren van de tests.
+Ik heb Apache, PHP, Mariadb en nextcloud geinstalleerd en getest op de Ubuntu server. Ook heb ik de poorten opengemaakt op de Ubuntu server. Ik heb DNS en DHCP geïnstalleerd en getest op de Microsoft server. Ook heb ik de GPO’s beheert in de tool Group Policy Management. Op het werkstation heb ik alle resultaten laten zien wat je op je Ubuntu server hebt uitgevoerd met de commando’s.
+Uit dit Testplan-Testrapport concludeer ik dat alle functionaliteiten goed zijn geïnstalleerd, getest en is naar behoren werkt
+
 
 
