@@ -1685,6 +1685,12 @@ Sh run•Sh vlan
 •Sh ipint brief•
 Configt
 •Exit
+	
+	Apache activeren (sudo systemctl start apache2)
+
+Mysql activeren (sudo systemctl start mysql)
+
+Php activeren (sudo systemctl start php)
 
 
 
