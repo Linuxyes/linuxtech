@@ -1385,6 +1385,306 @@ pin automaat 1 t/m 10 servers
 werkstation 11 t/m 20 werkstations
 21-30 printers
 31-40 pin automaat
+	
+	in index.html 
+naar pad /var/www/html/index.html
+
+<DOCTYPE HTML>
+<html>
+<head>
+<title>Hello world! Jou naam</title>
+</head>
+<body>
+<h1>Hello world!</h1>
+
+</body>
+</html>
+
+
+
+/var/wwww/html/nextcloud/config/config.php
+
+
+installatie virtualhost:
+
+
+
+
+
+
+cd /var/www/html/
+cd /etc/apache2/sites/-available
+sudo systemctl restart apache2
+sudo nano nextcloud.conf
+<VirtualHost *80>
+
+ServerName www.nextcloud.Assengraaf.nl
+ServerAlias nextcloud.Assengraaf.nl
+DocumentRoot /var/www/html/nextcloud
+
+<virtualHost>
+
+
+
+# Ensure that Apache listens on port 80
+Listen 80
+<VirtualHost *:80>
+    DocumentRoot "/www/example1"
+    ServerName www.example.com
+
+    # Other directives here
+</VirtualHost>
+
+<VirtualHost *:80>
+    DocumentRoot "/www/example2"
+    ServerName www.example.org
+
+    # Other directives here
+</VirtualHost>
+
+
+
+
+
+unauthorizeddomain
+•So, just go to/config/www/nextcloud/config and add your domain tothe config.php
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+defaultpage weg halen
+cd /var/www/html
+ls -l
+index.html
+sudo cp index.html index.html2
+sudo rm index.html
+sudo touch index.html
+sudo nano index.html
+<DOCTYPE! HTML>
+	
+	Belangtijkste linux commando's/ met uitleg wat de commando's betekenen.
+
+ls -l) dient voor om de kijken wat er in pad zit
+getent passwd
+getent passwd |cut -d: -f1
+ls -ld) 
+stat /etc/named
+chown
+chgrp
+id
+whoami
+groups
+newgrp
+exit
+usermod - g groupname username
+chgrp -R
+
+chown user:group <file|directory>
+chown user <file|directory>
+chown :group <file|directory>
+ls -l  /etc/passwd
+
+sudo -i) om als root in te loggen
+
+id) om de huidige identiteit te zien van je huidige account
+
+chmod) permisions wijzigen
+chmod u+x filenaam
+chmod gr+r filename
+chmod a-r filname
+chmod g=rx filname
+
+
+- A regular file which may be empty, contain text or binary data.
+d A directory file which contains the names of other files and links to them.
+l A symbolic link is a file name that refers (points) to another file.
+b A block file is one that relates to a block hardware device where data is read in blocks of data.
+c A character file is one that relates to a character hardware device where data is read one byte at a time.
+p A pipe file works similar tothe pipe symbol, allowing for the output of one process to communicate to another process through the pipe file, where the output of the one process is used as input for the other process.
+s A socket file allows two processes to communicate, where both processes are allowed to either send or receive data.
+
+permissions
+r 4
+w 2
+x 1
+rwx=777
+chmod 711 filename
+~ betekent home directory
+/ betekend root directory
+umask
+/home/bob je gaan naar gebruiker bob
+pwd
+cd= kan je surfen naar mappen
+~bob je benty in bob's home directory
+.. je kunt twee stappen naar voren
+
+ls
+-a– display all files, including hidden files
+-l– long display listing
+-h– Give file sizes in human readable sizes
+-R– Recursive listing
+-S– Sort output based on file size
+-t– Sort output based on modification time
+
+–plain fileA file that isn't a special file type
+–directoryA directory file (contains other files)
+–executableA file that can be run like a program
+–symbolic linkA file that points to another file
+-d– Don’t display directory contents
+
+cp kopieren
+Use –voption to display copy process
+Use –ito prompt overwrites
+Use –nto avoid overwrites
+Use –rto copy directory structures
+
+mv verplaatsen
+-i
+-n
+-v
+
+touch file aanmaken
+rm verwijderen
+rm -i
+rm -r
+
+mkdir maakt mappen aan directory
+
+--color
+
+
+2 editors
+vi/vim
+nano
+
+ctrl X exit
+ctrl W find
+ctrl G helpt je
+
+shebang
+#! of je de script wilt gebruiken
+#! /bin/sh
+#! /usr/bin/ruby
+
+Variables
+–FOO=“hello”
+–CWD=`pwd`
+–BAR=“Hello $NAME”
+•Using (need a $):
+–$FOO
+–echo “Hello $NAME”
+
+conditionals
+if something; the     # something returns an exit code.
+do this                 if it 0, then 'do this'
+fi                      will be executed up until fi
+
+
+if something; then                        # alternative syntax, allows
+do this                                      for multiple tests and a
+elif soomething else; then do that           default option if you want
+else 
+try this
+fi
+
+
+teststest
+–f /tmp/foo    # test if file exists
+test ! –f /tmp/foo# test if file doesn’t exist
+test $A –eq1          # is $A = 1 (numeric)
+test “$B” = “Hello” # string comparison
+test $A –lt 10         # $A < 10?
+
+alternatively, [ is the same as test:
+if test –f /tmp/foo; then # it works
+if [ -f /tmp/foo ]; then     # looks much nicer!
+
+
+Case
+case ”$GREETING" in
+hello|hi)
+echo "hello yourself"
+;;
+goodbye)
+echo "nice to have met you"
+echo "I hope to see you again"
+;;
+*)
+echo "I didn't understand that"
+esac
+
+
+Loops
+
+the for loops
+
+Operates over a fixed set of items or a glob
+NAMES=“Alice Bob Charlie”
+for N in $NAMES; do
+echo “Hello $N”
+done
+for FILE in *; do
+ls –l $FILE
+done
+
+While loops
+
+Tests the loop condition each time
+while [ ! –f /tmp/foo ]; do
+try_to_make_foo# makes /tmp/foo on success
+sleep 1  # wait 1 sec
+done
+•Used when the number of loops is unknown or changes each loop
+
+
+
+Nieuwe eisen•
+Aanpassen index.html (Apache default webpage)
+•Maken IP plan•
+Linux server een vaste IP adres•
+Werkstation via DHCP (Windows server)•
+Nextcloudvia DNS (A record aanmaken)•
+Uitleggen de commandsdie je hebt gebruikt 
+* Archiveren van gemaakte bestanden (directory structuur en zip file van maken) als zipbestand inleveren
+
+
+Technisch Ontwerp Services
+•IP -PLAN•
+DNS•
+DHCP•
+LAMP•
+Apache•
+MySQL•
+PHP•
+Nextcloud
+•Database query
+•AD•Groepen•
+
+Mappenstructuur•
+map groep leden rechten
+
+Enz.
+
+Basic Cisco commands
+•Enter•
+Enable•
+Sh run•Sh vlan
+•Sh ipint brief•
+Configt
+•Exit
 
 
 
