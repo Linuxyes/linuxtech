@@ -1692,6 +1692,17 @@ Mysql activeren (sudo systemctl start mysql)
 
 Php activeren (sudo systemctl start php)
 
+	sudo cd /var/www/html/nextcloud/config/
+	sudo nano config.php
+	
+	\\DC01-A\Homefolders\%username%
 
+	Alle medewerkers hebben toegang tot internet. De volgende poorten dienen te zijn geopend.
+
+• Interne poorten 80 (http)
+
+443 (https)
+
+53 (dns)
 
 
