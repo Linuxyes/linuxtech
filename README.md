@@ -1705,4 +1705,6 @@ Php activeren (sudo systemctl start php)
 
 53 (dns)
 
-
+download nextcloud
+	10.0.2.15/nextcloud
+	plakken bij die software nextcloud
