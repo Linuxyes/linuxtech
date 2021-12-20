@@ -2336,4 +2336,13 @@ werking van Group Policy Management testen	Ahmed	15-11-2021	12 min
 Beschrijf hier de conclusie die getrokken kan worden na het uitvoeren van de tests.
 Ik heb Apache, PHP, Mariadb en nextcloud geinstalleerd en getest op de Ubuntu server. Ook heb ik de poorten opengemaakt op de Ubuntu server. Ik heb DNS en DHCP geïnstalleerd en getest op de Microsoft server. Ook heb ik de GPO’s beheert in de tool Group Policy Management. Op het werkstation heb ik alle resultaten laten zien wat je op je Ubuntu server hebt uitgevoerd met de commando’s.
 Uit dit Testplan-Testrapport concludeer ik dat alle functionaliteiten goed zijn geïnstalleerd, getest en is naar behoren werkt
+How to install slack on ubuntu
+sudo snap install slack --classic
 
+Now that you have Slack installed on your Ubuntu desktop, you can start it either from the command line by typing slack or by clicking on the Slack icon (Activities → Slack).
+
+cat /etc/apt/sources.list.d/slack.list
+
+### THIS FILE IS AUTOMATICALLY CONFIGURED ###
+# You may comment out this entry, but any other modifications may be lost.
+deb https://packagecloud.io/slacktechnologies/slack/debian/ 
