@@ -1708,3 +1708,632 @@ Php activeren (sudo systemctl start php)
 download nextcloud
 	10.0.2.15/nextcloud
 	plakken bij die software nextcloud
+
+	
+	
+	
+	Geachte meneer/mevrouw van Leent,
+Hierbij heb ik de testplan-rapport vastgesteld in dit document. Ook wil ik een feedback van u krijgen voor een 2e versie van dit document. Mijn vraag is of ik een goedkeuring kan krijgen om het project te vervolgen.
+Met vriendelijke groet,
+Ahmed Azouag
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bijlage 8 Sjabloon Testplan-Rapport
+
+Project	:	Sportschool Fitnu!
+Opdrachtgever	:	P. van Leent
+Auteur	:	Ahmed Azouag
+Datum	: 19-11-2021
+Versiebeheer	:1.0
+
+Datum	Versie	Auteur	Aanpassing
+			
+			
+			
+ 
+Inhoud
+1 Overzicht van te testen functies	3
+1.1 Functionaliteit	3
+1.1.1	Te testen functionaliteit	3
+1.1.2	Testscenario	3
+1.1.3	Testinput	3
+1.1.4	Verwachte werking/output	3
+1.1.5	Werkelijke werking/output	3
+1.1.6	Conclusie test	3
+2 Testomgeving	3
+2.1 Overzicht testomgeving	3
+2.2 Planning opzet testomgeving	4
+3 Planning testactiviteiten	5
+4 Eindconclusie testen	5
+
+ 
+1 Overzicht van te testen functies
+1.1 Functionaliteit
+1.1.1	Te testen functionaliteit
+
+Ik ga de werking van DNS (Domain name Service testen)
+1.1.2	Testscenario
+
+Het ISO bestand downloaden, virtual Box installeren, in terminal testen. Het werkstation, Ubuntu- en dc01 server worden gebruikt,
+1.1.3	Testinput
+
+Ping 10.0.2.10 (pingen van IP-adres naar naam)
+Ping dc01 (pingen van naam naar IP-adres)
+Lamp (A-record)
+
+1.1.4	Verwachte werking/output
+Het pingen van IP-adres naar naam en van naam naar IP-adres is gelukt (werkstation). Het woord ‘lamp’ wordt in de browser getypt en de website (Apache) komt tevoorschijn.
+1.1.5	Werkelijke werking/output
+Hieronder zie je dat er wordt gepingd naar dc01 en dat het IP-adres 10.0.2.10 aan het pingen is naar dc01 (naam).
+ 
+
+1.1.6	Conclusie test
+Uit bovenstaande zie je dan DNS goed is geïnstalleerd en naar behoren werkt.
+
+1.2 Functionaliteit
+1.1.1	Te testen functionaliteit
+
+Ik ga de werking van DHCP testen.
+1.1.2	Testscenario
+
+Het ISO bestand downloaden, virtual Box installeren, in terminal testen. Het werkstation, Ubuntu- en dc01 server worden gebruikt,
+1.1.3	Testinput
+
+Ipconfig /all
+
+1.1.4	Verwachte werking/output
+Je hebt een scope aangemaakt en de juiste IP-adressen zijn uitgedeeld.  
+
+1.1.5	Werkelijke werking/output
+
+Hieronder zie je dat de DHCP server het IP-adres heeft uitgedeeld aan het werkstation.
+
+
+1.1.6	Conclusie test
+Uit bovenstaande zie je dan DHCP goed is geïnstalleerd en naar behoren werkt.
+
+
+
+
+
+
+
+
+
+
+1.3 Functionaliteit
+1.1.1	Te testen functionaliteit
+Ik ga de functionaliteiten testen van Apache op de Ubuntu server en de werkstation.
+1.1.2	Testscenario
+Het ISO bestand downloaden, virtual Box installeren, in terminal testen. Het werkstation, Ubuntu- en dc01 server worden gebruikt.
+1.1.3	Testinput
+Sudo apt install apache2 (het installeren van Apache)
+Sudo systemctl status apache2 (Hiermee kan je zien of Apache actief is in het systeem)
+http://10.0.2.15 (het IP-adres van de Ubuntu server)
+1.1.4	Verwachte werking/output
+Je hebt Apache geïnstalleerd en is aan het runnen (actief) in het systeem. Je zet de IP-adres van de Ubuntu server op de browser van de werkstation, waardoor de website (Apache) te voorschijn komt.
+1.1.5	Werkelijke werking/output
+Hieronder zie je dat Apache aan het runnen is en actief is in het systeem.
+ 
+Hieronder zie je de website van Apache te voorschijn.
+ 
+1.1.6	Conclusie test
+Uit bovenstaande zie je dan Apache goed is geïnstalleerd en naar behoren werkt.
+1.4 Functionaliteit
+1.1.1	Te testen functionaliteit
+Ik ga de functionaliteiten testen van de Firewall op de Ubuntu server.
+1.1.2	Testscenario
+Het ISO bestand downloaden, virtual Box installeren, in terminal testen. Het werkstation, Ubuntu- en dc01 server worden gebruikt.
+1.1.3	Testinput
+Sudo ufw enable (je laat zien dat de Firewall geactiveerd is)
+Sudo ufw status ( je laat de status van de Firewall zien)
+
+Verwachte werking/output
+Je hebt de poorten 443, 80 en 53 open gemaakt, waardoor de Firewall geactiveerd is en naar behoren werkt.
+Werkelijke werking/output
+Hieronder zie je dat de Firewall actief in het systeem staat.
+ 
+
+
+
+
+1.1.4	Conclusie test
+Uit bovenstaande zie je dat de Firewall actief is en naar behoren werkt.
+
+
+1.5 Functionaliteit
+1.1.1	Te testen functionaliteit
+Ik ga de functionaliteiten testen van PHP op de Ubuntu server en de werkstation.
+1.1.2	Testscenario
+Het ISO bestand downloaden, virtual Box installeren, in terminal testen. Het werkstation, Ubuntu- en dc01 server worden gebruikt.
+1.1.3	Testinput
+Sudo apt install php libapache2-mod-php (het installeren van PHP)
+Php –version (Hiermee laat je de versie zien van PHP)
+http://10.0.2.15/phpinfo.php (de IP-adres van Ubuntu server en de testpage die is aangemaakt)
+1.1.4	Verwachte werking/output
+Je hebt PHP geïnstalleerd en je ziet de versie van PHP in het systeem. De testpage is aangemaakt voor de website. Je zet de IP-adres van de Ubuntu server op de browser van de werkstation, waardoor de website (PHP) te voorschijn komt.
+1.1.5	Werkelijke werking/output
+Hieronder zie je dat de versie word aangetoond van PHP in het systeem.
+ 
+Hieronder zie je de website van PHP te voorschijn.
+ 
+1.1.6	Conclusie test
+Uit bovenstaande zie je dan PHP goed is geïnstalleerd en naar behoren werkt.
+1.6 Functionaliteit
+1.1.1	Te testen functionaliteit
+Ik ga de functionaliteiten testen van Mariadb op de Ubuntu server.
+1.1.2	Testscenario
+Het ISO bestand downloaden, virtual Box installeren, in terminal testen. Het werkstation, Ubuntu- en dc01 server worden gebruikt.
+1.1.3	Testinput
+Sudo apt install mariadb-server mariadb-client (het installeren van Mariadb)
+Sudo systemctl status mariadb (Hiermee kan je zien of Mariadb actief is in het systeem)
+1.1.4	Verwachte werking/output
+Je hebt Mariadb geïnstalleerd en is aan het runnen (actief) in het systeem. Je geeft antwoord op de beveiligingsvragen.
+1.1.5	Werkelijke werking/output
+Hieronder zie je dat Mariadb aan het runnen is en actief is in het systeem.
+ 
+
+1.1.6	Conclusie test
+Uit bovenstaande zie je dan Mariadb goed is geïnstalleerd en naar behoren werkt.
+
+
+
+
+
+
+1.7 Functionaliteit
+1.1.5	Te testen functionaliteit
+Ik ga de functionaliteiten testen van Nextcloud op de Ubuntu server en de werkstation.
+1.1.6	Testscenario
+Het ISO bestand downloaden, virtual Box installeren, in terminal testen. Het werkstation, Ubuntu- en dc01 server worden gebruikt.
+1.1.7	Testinput
+http:10.0.2.15/nextcloud (de IP-adres van Ubuntu server en de naam nextcloud)
+1.1.8	Verwachte werking/output
+Je hebt Nextcloud geïnstalleerd en is aan het runnen (actief) in het systeem. Je hebt een database gemaakt om in te kunnen loggen op de website. Je zet de IP-adres van de Ubuntu server en de naam nextcloud op de browser van de werkstation, waardoor de website (Nextcloud) te voorschijn komt.
+Werkelijke werking/output
+Hieronder zie je dat de website van Nextcloud wordt aangetoond.
+ 
+Hieronder zie je dat ik ben ingelogd op de website.
+ 
+
+
+1.1.9	Conclusie test
+Uit bovenstaande zie je dan Nextcloud goed is geïnstalleerd en naar behoren werkt.
+
+
+
+1.8 Functionaliteit
+1.1.1	Te testen functionaliteit
+Ik ga de functionaliteiten testen van de Group Policy Mangament op de server(dc01) en de werkstation.
+1.1.2	Testscenario
+1.1.3	Het ISO bestand downloaden, virtual Box installeren, in terminal testen. Het werkstation, Ubuntu- en dc01 server worden gebruikt.
+1.1.4	Testinput
+Group Policy Management 
+Geen toegang tot configuratiescherm en Command Prompt
+Geen toegang om de achtergrond (scherm)te wijzigen
+1.1.5	Verwachte werking/output
+Je laat met de gebruiker zien op het werkstation dat je niet op de configuratiescherm kan. Je laat zien dat de gebruiker het achtergrond niet kan wijzigen. Ook heeft de gebruiker geen toegang tot de Command Prompt. 
+Werkelijke werking/output
+Hieronder zie je dat de gebruiker niet op de configuratiescherm kan en dat de gebruiker het achtergrond niet kan wijzigen.
+  
+Hieronder zie je dat de gebruiker geen toegang heeft op de Command Prompt.
+ 
+1.1.6	Conclusie test
+Uit bovenstaande zie je dat de rechten zijn aangepast  en naar behoren werkt.
+1.7 Functionaliteit
+1.1.1	Te testen functionaliteit
+Ik ga de functionaliteiten testen van de Group Policy Mangament op de server(dc01) en de werkstation.
+1.1.2	Testscenario
+1.1.3	Het ISO bestand downloaden, virtual Box installeren, in terminal testen. Het werkstation, Ubuntu- en dc01 server worden gebruikt.
+1.1.4	Testinput
+Group Policy Management 
+Geen toegang tot configuratiescherm en Command Prompt
+Geen toegang om de achtergrond (scherm)te wijzigen
+1.1.5	Verwachte werking/output
+Je laat met de gebruiker zien op het werkstation dat je niet op de configuratiescherm kan. Je laat zien dat de gebruiker het achtergrond niet kan wijzigen. Ook heeft de gebruiker geen toegang tot de Command Prompt. 
+Werkelijke werking/output
+Hieronder zie je dat de gebruiker niet op de configuratiescherm kan en dat de gebruiker het achtergrond niet kan wijzigen.
+  
+Hieronder zie je dat de gebruiker geen toegang heeft op de Command Prompt.
+ 
+1.1.6	Conclusie test
+Uit bovenstaande zie je dat de rechten zijn aangepast  en naar behoren werkt.
+
+
+
+
+
+
+2 Testomgeving
+2.1 Overzicht testomgeving
+Beschrijf hier hoe de testomgeving opgebouwd moet worden.
+
+Je hebt 2 servers en 1 werkstation, namelijk:
+•	Ubuntu server
+Hiermee ga ik Apache, PHP, Mariadb en nextcloud installeren en testen op de Ubuntu server. Ook moeten de poorten opengemaakt worden op de Ubuntu server.
+•	Microsoft server
+Hiermee ga ik DNS en DHCP installeren en testen op de Microsoft server. Ook laat je zien dat je GPO’s beheert in de tool Group Policy Management.
+•	Werkstation
+Hiermee laat je alle resultaten zien wat je op je Ubuntu server hebt uitgevoerd met de commando’s.
+Je ziet de resultaten van Apache, PHP, nextcloud, GPO, DNS en DHCP.
+
+Alle 3 zijn met elkaar verbonden in het zelfde netwerk.
+ 
+
+
+ 
+2.2 Planning opzet testomgeving
+Maak hier een planning voor het opzetten van de testomgeving.
+
+Volgnr.	Globale beschrijving	Uitvoerder	Benodigde doorlooptijd	Datum start	Datum oplevering	Benodigd aantal uren	Kosten arbeid	Overige kosten
+ 1	 werking van DNS testen	 Ahmed	 12 minuten	15-11-2021	16-11-2021	 0,2	 €       0       -   	 -
+ 2	 werking van DHCP testen	 Ahmed	 12 minuten	 15-11-2021	 16-11-2021	 0,2	 €       0       -   	 -
+ 3	 werking van Apache testen	 Ahmed	 6 minuten	 15-11-2021	 16-11-2021	 0,1	 €       0       -   	 -
+ 4	 werking van Firewall testen	 Ahmed	 6 minuten	 15-11-2021	 16-11-2021	 0,1	 €       0       -   	 -
+ 5	 werking van PHP testen	 Ahmed	 6 minuten	 15-11-2021	 16-11-2021	 0,1	 €       0       -   	 -
+ 6	 werking van Mariadb testen	 Ahmed	 6 minuten	 15-11-2021	 16-11-2021	 0,1	 €       0       -   	 -
+ 7	 werking van Nextcloud testen	 Ahmed	 12 minuten	 15-11-2021	 16-11-2021	 0,2	 €       0       -   	 -
+ 8	 werking van Group Policiy Management testen	 Ahmed	 12 minuten	 15-11-2021	 16-11-2021	 0,2	 €       0       -   	 -
+ 	 	 	 	 	 	 	 	 
+ 	 	 	 	 	 	 	 	 
+ 	 	 	 	 	 	 	 	 
+ 	 	 	 	 	 	 	 	 
+ 	 	 	 	 	 	 	 	 
+Totaal	 Alle functionaliteiten testen	 Ahmed	 66 min	15-11-2021	16-11-2021	1,2	 €       0       -   	 €                   -   
+ 
+
+3 Planning testactiviteiten
+Maak een overzicht van de testen, plan daarbij wie de test gaat uitvoeren, wanneer de testen uitgevoerd worden en hoelang het testen zal duren.
+
+Te testen functionaliteit	Tester	Wanneer	Doorlooptijd tests
+werking van DNS testen	Ahmed	15-11-2021	12 min
+werking van DHCP testen	Ahmed	15-11-2021	12 min
+werking van Apache testen	Ahmed	15-11-2021	6 min
+werking van Firewall testen	Ahmed	15-11-2021	6 min
+werking van PHP testen	Ahmed	15-11-2021	6 min
+werking van Mariadb testen	Ahmed	15-11-2021	6 min
+werking van Nextcloud testen	Ahmed	15-11-2021	12 min
+werking van Group Policy Management testen	Ahmed	15-11-2021	12 min
+
+4 Eindconclusie testen
+Beschrijf hier de conclusie die getrokken kan worden na het uitvoeren van de tests.
+Ik heb Apache, PHP, Mariadb en nextcloud geinstalleerd en getest op de Ubuntu server. Ook heb ik de poorten opengemaakt op de Ubuntu server. Ik heb DNS en DHCP geïnstalleerd en getest op de Microsoft server. Ook heb ik de GPO’s beheert in de tool Group Policy Management. Op het werkstation heb ik alle resultaten laten zien wat je op je Ubuntu server hebt uitgevoerd met de commando’s.
+Uit dit Testplan-Testrapport concludeer ik dat alle functionaliteiten goed zijn geïnstalleerd, getest en is naar behoren werkt
+
+
+	
+	
+	
+	How to install slack on ubuntu
+sudo snap install slack --classic
+
+Now that you have Slack installed on your Ubuntu desktop, you can start it either from the command line by typing slack or by clicking on the Slack icon (Activities → Slack).
+
+cat /etc/apt/sources.list.d/slack.list
+
+### THIS FILE IS AUTOMATICALLY CONFIGURED ###
+# You may comment out this entry, but any other modifications may be lost.
+deb https://packagecloud.io/slacktechnologies/slack/debian/ jessie main
+	
+	Geachte meneer/mevrouw van Leent,
+Hierbij heb ik de testplan-rapport vastgesteld in dit document. Ook wil ik een feedback van u krijgen voor een 2e versie van dit document. Mijn vraag is of ik een goedkeuring kan krijgen om het project te vervolgen.
+Met vriendelijke groet,
+Ahmed Azouag
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bijlage 8 Sjabloon Testplan-Rapport
+
+Project	:	Sportschool Fitnu!
+Opdrachtgever	:	P. van Leent
+Auteur	:	Ahmed Azouag
+Datum	: 19-11-2021
+Versiebeheer	:1.0
+
+Datum	Versie	Auteur	Aanpassing
+			
+			
+			
+ 
+Inhoud
+1 Overzicht van te testen functies	3
+1.1 Functionaliteit	3
+1.1.1	Te testen functionaliteit	3
+1.1.2	Testscenario	3
+1.1.3	Testinput	3
+1.1.4	Verwachte werking/output	3
+1.1.5	Werkelijke werking/output	3
+1.1.6	Conclusie test	3
+2 Testomgeving	3
+2.1 Overzicht testomgeving	3
+2.2 Planning opzet testomgeving	4
+3 Planning testactiviteiten	5
+4 Eindconclusie testen	5
+
+ 
+1 Overzicht van te testen functies
+1.1 Functionaliteit
+1.1.1	Te testen functionaliteit
+
+Ik ga de werking van DNS (Domain name Service testen)
+1.1.2	Testscenario
+
+Het ISO bestand downloaden, virtual Box installeren, in terminal testen. Het werkstation, Ubuntu- en dc01 server worden gebruikt,
+1.1.3	Testinput
+
+Ping 10.0.2.10 (pingen van IP-adres naar naam)
+Ping dc01 (pingen van naam naar IP-adres)
+Lamp (A-record)
+
+1.1.4	Verwachte werking/output
+Het pingen van IP-adres naar naam en van naam naar IP-adres is gelukt (werkstation). Het woord ‘lamp’ wordt in de browser getypt en de website (Apache) komt tevoorschijn.
+1.1.5	Werkelijke werking/output
+Hieronder zie je dat er wordt gepingd naar dc01 en dat het IP-adres 10.0.2.10 aan het pingen is naar dc01 (naam).
+ 
+
+1.1.6	Conclusie test
+Uit bovenstaande zie je dan DNS goed is geïnstalleerd en naar behoren werkt.
+
+1.2 Functionaliteit
+1.1.1	Te testen functionaliteit
+
+Ik ga de werking van DHCP testen.
+1.1.2	Testscenario
+
+Het ISO bestand downloaden, virtual Box installeren, in terminal testen. Het werkstation, Ubuntu- en dc01 server worden gebruikt,
+1.1.3	Testinput
+
+Ipconfig /all
+
+1.1.4	Verwachte werking/output
+Je hebt een scope aangemaakt en de juiste IP-adressen zijn uitgedeeld.  
+
+1.1.5	Werkelijke werking/output
+
+Hieronder zie je dat de DHCP server het IP-adres heeft uitgedeeld aan het werkstation.
+
+
+1.1.6	Conclusie test
+Uit bovenstaande zie je dan DHCP goed is geïnstalleerd en naar behoren werkt.
+
+
+
+
+
+
+
+
+
+
+1.3 Functionaliteit
+1.1.1	Te testen functionaliteit
+Ik ga de functionaliteiten testen van Apache op de Ubuntu server en de werkstation.
+1.1.2	Testscenario
+Het ISO bestand downloaden, virtual Box installeren, in terminal testen. Het werkstation, Ubuntu- en dc01 server worden gebruikt.
+1.1.3	Testinput
+Sudo apt install apache2 (het installeren van Apache)
+Sudo systemctl status apache2 (Hiermee kan je zien of Apache actief is in het systeem)
+http://10.0.2.15 (het IP-adres van de Ubuntu server)
+1.1.4	Verwachte werking/output
+Je hebt Apache geïnstalleerd en is aan het runnen (actief) in het systeem. Je zet de IP-adres van de Ubuntu server op de browser van de werkstation, waardoor de website (Apache) te voorschijn komt.
+1.1.5	Werkelijke werking/output
+Hieronder zie je dat Apache aan het runnen is en actief is in het systeem.
+ 
+Hieronder zie je de website van Apache te voorschijn.
+ 
+1.1.6	Conclusie test
+Uit bovenstaande zie je dan Apache goed is geïnstalleerd en naar behoren werkt.
+1.4 Functionaliteit
+1.1.1	Te testen functionaliteit
+Ik ga de functionaliteiten testen van de Firewall op de Ubuntu server.
+1.1.2	Testscenario
+Het ISO bestand downloaden, virtual Box installeren, in terminal testen. Het werkstation, Ubuntu- en dc01 server worden gebruikt.
+1.1.3	Testinput
+Sudo ufw enable (je laat zien dat de Firewall geactiveerd is)
+Sudo ufw status ( je laat de status van de Firewall zien)
+
+Verwachte werking/output
+Je hebt de poorten 443, 80 en 53 open gemaakt, waardoor de Firewall geactiveerd is en naar behoren werkt.
+Werkelijke werking/output
+Hieronder zie je dat de Firewall actief in het systeem staat.
+ 
+
+
+
+
+1.1.4	Conclusie test
+Uit bovenstaande zie je dat de Firewall actief is en naar behoren werkt.
+
+
+1.5 Functionaliteit
+1.1.1	Te testen functionaliteit
+Ik ga de functionaliteiten testen van PHP op de Ubuntu server en de werkstation.
+1.1.2	Testscenario
+Het ISO bestand downloaden, virtual Box installeren, in terminal testen. Het werkstation, Ubuntu- en dc01 server worden gebruikt.
+1.1.3	Testinput
+Sudo apt install php libapache2-mod-php (het installeren van PHP)
+Php –version (Hiermee laat je de versie zien van PHP)
+http://10.0.2.15/phpinfo.php (de IP-adres van Ubuntu server en de testpage die is aangemaakt)
+1.1.4	Verwachte werking/output
+Je hebt PHP geïnstalleerd en je ziet de versie van PHP in het systeem. De testpage is aangemaakt voor de website. Je zet de IP-adres van de Ubuntu server op de browser van de werkstation, waardoor de website (PHP) te voorschijn komt.
+1.1.5	Werkelijke werking/output
+Hieronder zie je dat de versie word aangetoond van PHP in het systeem.
+ 
+Hieronder zie je de website van PHP te voorschijn.
+ 
+1.1.6	Conclusie test
+Uit bovenstaande zie je dan PHP goed is geïnstalleerd en naar behoren werkt.
+1.6 Functionaliteit
+1.1.1	Te testen functionaliteit
+Ik ga de functionaliteiten testen van Mariadb op de Ubuntu server.
+1.1.2	Testscenario
+Het ISO bestand downloaden, virtual Box installeren, in terminal testen. Het werkstation, Ubuntu- en dc01 server worden gebruikt.
+1.1.3	Testinput
+Sudo apt install mariadb-server mariadb-client (het installeren van Mariadb)
+Sudo systemctl status mariadb (Hiermee kan je zien of Mariadb actief is in het systeem)
+1.1.4	Verwachte werking/output
+Je hebt Mariadb geïnstalleerd en is aan het runnen (actief) in het systeem. Je geeft antwoord op de beveiligingsvragen.
+1.1.5	Werkelijke werking/output
+Hieronder zie je dat Mariadb aan het runnen is en actief is in het systeem.
+ 
+
+1.1.6	Conclusie test
+Uit bovenstaande zie je dan Mariadb goed is geïnstalleerd en naar behoren werkt.
+
+
+
+
+
+
+1.7 Functionaliteit
+1.1.5	Te testen functionaliteit
+Ik ga de functionaliteiten testen van Nextcloud op de Ubuntu server en de werkstation.
+1.1.6	Testscenario
+Het ISO bestand downloaden, virtual Box installeren, in terminal testen. Het werkstation, Ubuntu- en dc01 server worden gebruikt.
+1.1.7	Testinput
+http:10.0.2.15/nextcloud (de IP-adres van Ubuntu server en de naam nextcloud)
+1.1.8	Verwachte werking/output
+Je hebt Nextcloud geïnstalleerd en is aan het runnen (actief) in het systeem. Je hebt een database gemaakt om in te kunnen loggen op de website. Je zet de IP-adres van de Ubuntu server en de naam nextcloud op de browser van de werkstation, waardoor de website (Nextcloud) te voorschijn komt.
+Werkelijke werking/output
+Hieronder zie je dat de website van Nextcloud wordt aangetoond.
+ 
+Hieronder zie je dat ik ben ingelogd op de website.
+ 
+
+
+1.1.9	Conclusie test
+Uit bovenstaande zie je dan Nextcloud goed is geïnstalleerd en naar behoren werkt.
+
+
+
+1.8 Functionaliteit
+1.1.1	Te testen functionaliteit
+Ik ga de functionaliteiten testen van de Group Policy Mangament op de server(dc01) en de werkstation.
+1.1.2	Testscenario
+1.1.3	Het ISO bestand downloaden, virtual Box installeren, in terminal testen. Het werkstation, Ubuntu- en dc01 server worden gebruikt.
+1.1.4	Testinput
+Group Policy Management 
+Geen toegang tot configuratiescherm en Command Prompt
+Geen toegang om de achtergrond (scherm)te wijzigen
+1.1.5	Verwachte werking/output
+Je laat met de gebruiker zien op het werkstation dat je niet op de configuratiescherm kan. Je laat zien dat de gebruiker het achtergrond niet kan wijzigen. Ook heeft de gebruiker geen toegang tot de Command Prompt. 
+Werkelijke werking/output
+Hieronder zie je dat de gebruiker niet op de configuratiescherm kan en dat de gebruiker het achtergrond niet kan wijzigen.
+  
+Hieronder zie je dat de gebruiker geen toegang heeft op de Command Prompt.
+ 
+1.1.6	Conclusie test
+Uit bovenstaande zie je dat de rechten zijn aangepast  en naar behoren werkt.
+1.7 Functionaliteit
+1.1.1	Te testen functionaliteit
+Ik ga de functionaliteiten testen van de Group Policy Mangament op de server(dc01) en de werkstation.
+1.1.2	Testscenario
+1.1.3	Het ISO bestand downloaden, virtual Box installeren, in terminal testen. Het werkstation, Ubuntu- en dc01 server worden gebruikt.
+1.1.4	Testinput
+Group Policy Management 
+Geen toegang tot configuratiescherm en Command Prompt
+Geen toegang om de achtergrond (scherm)te wijzigen
+1.1.5	Verwachte werking/output
+Je laat met de gebruiker zien op het werkstation dat je niet op de configuratiescherm kan. Je laat zien dat de gebruiker het achtergrond niet kan wijzigen. Ook heeft de gebruiker geen toegang tot de Command Prompt. 
+Werkelijke werking/output
+Hieronder zie je dat de gebruiker niet op de configuratiescherm kan en dat de gebruiker het achtergrond niet kan wijzigen.
+  
+Hieronder zie je dat de gebruiker geen toegang heeft op de Command Prompt.
+ 
+1.1.6	Conclusie test
+Uit bovenstaande zie je dat de rechten zijn aangepast  en naar behoren werkt.
+
+
+
+
+
+
+2 Testomgeving
+2.1 Overzicht testomgeving
+Beschrijf hier hoe de testomgeving opgebouwd moet worden.
+
+Je hebt 2 servers en 1 werkstation, namelijk:
+•	Ubuntu server
+Hiermee ga ik Apache, PHP, Mariadb en nextcloud installeren en testen op de Ubuntu server. Ook moeten de poorten opengemaakt worden op de Ubuntu server.
+•	Microsoft server
+Hiermee ga ik DNS en DHCP installeren en testen op de Microsoft server. Ook laat je zien dat je GPO’s beheert in de tool Group Policy Management.
+•	Werkstation
+Hiermee laat je alle resultaten zien wat je op je Ubuntu server hebt uitgevoerd met de commando’s.
+Je ziet de resultaten van Apache, PHP, nextcloud, GPO, DNS en DHCP.
+
+Alle 3 zijn met elkaar verbonden in het zelfde netwerk.
+ 
+
+
+ 
+2.2 Planning opzet testomgeving
+Maak hier een planning voor het opzetten van de testomgeving.
+
+Volgnr.	Globale beschrijving	Uitvoerder	Benodigde doorlooptijd	Datum start	Datum oplevering	Benodigd aantal uren	Kosten arbeid	Overige kosten
+ 1	 werking van DNS testen	 Ahmed	 12 minuten	15-11-2021	16-11-2021	 0,2	 €       0       -   	 -
+ 2	 werking van DHCP testen	 Ahmed	 12 minuten	 15-11-2021	 16-11-2021	 0,2	 €       0       -   	 -
+ 3	 werking van Apache testen	 Ahmed	 6 minuten	 15-11-2021	 16-11-2021	 0,1	 €       0       -   	 -
+ 4	 werking van Firewall testen	 Ahmed	 6 minuten	 15-11-2021	 16-11-2021	 0,1	 €       0       -   	 -
+ 5	 werking van PHP testen	 Ahmed	 6 minuten	 15-11-2021	 16-11-2021	 0,1	 €       0       -   	 -
+ 6	 werking van Mariadb testen	 Ahmed	 6 minuten	 15-11-2021	 16-11-2021	 0,1	 €       0       -   	 -
+ 7	 werking van Nextcloud testen	 Ahmed	 12 minuten	 15-11-2021	 16-11-2021	 0,2	 €       0       -   	 -
+ 8	 werking van Group Policiy Management testen	 Ahmed	 12 minuten	 15-11-2021	 16-11-2021	 0,2	 €       0       -   	 -
+ 	 	 	 	 	 	 	 	 
+ 	 	 	 	 	 	 	 	 
+ 	 	 	 	 	 	 	 	 
+ 	 	 	 	 	 	 	 	 
+ 	 	 	 	 	 	 	 	 
+Totaal	 Alle functionaliteiten testen	 Ahmed	 66 min	15-11-2021	16-11-2021	1,2	 €       0       -   	 €                   -   
+ 
+
+3 Planning testactiviteiten
+Maak een overzicht van de testen, plan daarbij wie de test gaat uitvoeren, wanneer de testen uitgevoerd worden en hoelang het testen zal duren.
+
+Te testen functionaliteit	Tester	Wanneer	Doorlooptijd tests
+werking van DNS testen	Ahmed	15-11-2021	12 min
+werking van DHCP testen	Ahmed	15-11-2021	12 min
+werking van Apache testen	Ahmed	15-11-2021	6 min
+werking van Firewall testen	Ahmed	15-11-2021	6 min
+werking van PHP testen	Ahmed	15-11-2021	6 min
+werking van Mariadb testen	Ahmed	15-11-2021	6 min
+werking van Nextcloud testen	Ahmed	15-11-2021	12 min
+werking van Group Policy Management testen	Ahmed	15-11-2021	12 min
+
+4 Eindconclusie testen
+Beschrijf hier de conclusie die getrokken kan worden na het uitvoeren van de tests.
+Ik heb Apache, PHP, Mariadb en nextcloud geinstalleerd en getest op de Ubuntu server. Ook heb ik de poorten opengemaakt op de Ubuntu server. Ik heb DNS en DHCP geïnstalleerd en getest op de Microsoft server. Ook heb ik de GPO’s beheert in de tool Group Policy Management. Op het werkstation heb ik alle resultaten laten zien wat je op je Ubuntu server hebt uitgevoerd met de commando’s.
+Uit dit Testplan-Testrapport concludeer ik dat alle functionaliteiten goed zijn geïnstalleerd, getest en is naar behoren werkt
+
